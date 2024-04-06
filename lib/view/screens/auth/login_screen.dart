@@ -175,7 +175,7 @@ class LoginScreen extends StatelessWidget {
                               builder: (_) {
                                 return InkWell(
                                   onTap: () {
-                                    controller.facebookSignUpApp();
+                                   //controller.facebookSignUpApp();
                                   },
                                   child:
                                       Image.asset('assets/images/facebook.png'),

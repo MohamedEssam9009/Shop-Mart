@@ -2,7 +2,6 @@ import '../../models/facebook_model.dart';
 import '../../routes/routes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -137,18 +136,18 @@ class AuthController extends GetxController {
     }
   }
 
-  void facebookSignUpApp() async {
-    final LoginResult loginResult = await FacebookAuth.instance.login();
-    if (loginResult.status == LoginStatus.success) {
-      final data = await FacebookAuth.instance.getUserData();
-      facebookModel = FaceBookModel.fromJson(data);
-      isSignIn = true;
-      authBox.write('auth', isSignIn);
+  // void facebookSignUpApp() async {
+  //   final LoginResult loginResult = await FacebookAuth.instance.login();
+  //   if (loginResult.status == LoginStatus.success) {
+  //     final data = await FacebookAuth.instance.getUserData();
+  //     facebookModel = FaceBookModel.fromJson(data);
+  //     isSignIn = true;
+  //     authBox.write('auth', isSignIn);
 
-      update();
-      Get.offNamed(Routes.mainScreen);
-    }
-  }
+  //     update();
+  //     Get.offNamed(Routes.mainScreen);
+  //   }
+  // }
 
   void resetPassword(String email) async {
     try {

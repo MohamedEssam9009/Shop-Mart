@@ -50,19 +50,19 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAixpCl8JaHavQlzZo_bzfRRqiZIYEB-MI',
-    appId: '1:98111433325:android:6feaa92a4d3ae45ab56d64',
-    messagingSenderId: '98111433325',
-    projectId: 'asroo-shop-40b79',
-    storageBucket: 'asroo-shop-40b79.appspot.com',
+    apiKey: 'AIzaSyAMFyPf2cU842v_BpxOBup2Qny0eqCAyec',
+    appId: '1:430373408135:android:4af4c48643498211d6d722',
+    messagingSenderId: '430373408135',
+    projectId: 'asroo-shop-c2f71',
+    storageBucket: 'asroo-shop-c2f71.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDmcEExTcbTwaKYW_GtbsfIhz9qfHFNNUc',
-    appId: '1:98111433325:ios:1d5aaa25c0962819b56d64',
-    messagingSenderId: '98111433325',
-    projectId: 'asroo-shop-40b79',
-    storageBucket: 'asroo-shop-40b79.appspot.com',
-    iosBundleId: 'com.example.eCommerceGetx',
+    apiKey: 'AIzaSyBaBkZZpiNunBtGYS8Te6C9gzkKO9zm5dE',
+    appId: '1:430373408135:ios:f64590b3c83ed4aad6d722',
+    messagingSenderId: '430373408135',
+    projectId: 'asroo-shop-c2f71',
+    storageBucket: 'asroo-shop-c2f71.appspot.com',
+    iosBundleId: 'com.example.asrooShop',
   );
 }

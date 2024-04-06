@@ -16,7 +16,7 @@ class MainController extends GetxController {
   ].obs;
 
   final title = [
-    'Shop App',
+    'Asroo Shop',
     'Categories',
     'Favorites',
     'Settings',
