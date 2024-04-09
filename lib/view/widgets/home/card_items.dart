@@ -32,6 +32,7 @@ class CardItems extends StatelessWidget {
                 image: controller.productList[index].image,
                 price: controller.productList[index].price,
                 rate: controller.productList[index].rating.rate,
+                productId: controller.productList[index].id,
               );
             },
             itemCount: controller.productList.length,
@@ -45,6 +46,7 @@ class CardItems extends StatelessWidget {
     required String image,
     required double price,
     required double rate,
+    required int productId,
   }) {
     return Padding(
       padding: const EdgeInsets.all(5.0),
@@ -62,24 +64,33 @@ class CardItems extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.favorite_outline,
-                    color: Colors.black,
+            Obx(
+              () => Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      controller.manageFavorite(productId);
+                    },
+                    icon: controller.isFavorite(productId)
+                        ? const Icon(
+                            Icons.favorite,
+                            color: Colors.red,
+                          )
+                        : const Icon(
+                            Icons.favorite_outline,
+                            color: Colors.black,
+                          ),
                   ),
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.add,
-                    color: Colors.black,
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.add,
+                      color: Colors.black,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             Container(
               width: double.infinity,

@@ -1,50 +1,71 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../logic/controllers/product_controller.dart';
+
 class FavoritesScreen extends StatelessWidget {
-  const FavoritesScreen({super.key});
+  FavoritesScreen({super.key});
+
+  final controller = Get.put(ProductController());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: context.theme.scaffoldBackgroundColor,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(
-              height: 100.0,
-              width: 100.0,
-              child: Image.asset('assets/images/heart.png'),
-            ),
-            const SizedBox(height: 20.0),
-            Text(
-              'Please, add your favorites products.',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Get.isDarkMode ? Colors.white : Colors.black,
-                fontSize: 18.0,
+      body: Obx(
+        () {
+          if (controller.favoriteList.isEmpty) {
+            return Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: 100.0,
+                    width: 100.0,
+                    child: Image.asset('assets/images/heart.png'),
+                  ),
+                  const SizedBox(height: 20.0),
+                  Text(
+                    'Please, add your favorites products.',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Get.isDarkMode ? Colors.white : Colors.black,
+                      fontSize: 18.0,
+                    ),
+                  ),
+                ],
               ),
-            ),
-          ],
-        ),
+            );
+          } else {
+            return ListView.separated(
+              itemBuilder: (context, index) {
+                return buildFavItems(
+                  image: controller.favoriteList[index].image,
+                  price: controller.favoriteList[index].price,
+                  title: controller.favoriteList[index].title,
+                  productId: controller.favoriteList[index].id,
+                );
+              },
+              separatorBuilder: (context, index) {
+                return const Divider(
+                  color: Colors.grey,
+                  thickness: 1,
+                );
+              },
+              itemCount: controller.favoriteList.length,
+            );
+          }
+        },
       ),
-      // body: ListView.separated(
-      //   itemBuilder: (context, index) {
-      //     return buildFavItems();
-      //   },
-      //   separatorBuilder: (context, index) {
-      //     return const Divider(
-      //       color: Colors.grey,
-      //       thickness: 1,
-      //     );
-      //   },
-      //   itemCount: 10,
-      // ),
     );
   }
 
-  Widget buildFavItems() {
+  Widget buildFavItems({
+    required String image,
+    required double price,
+    required String title,
+    required int productId,
+  }) {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: SizedBox(
@@ -61,7 +82,7 @@ class FavoritesScreen extends StatelessWidget {
                 child: AspectRatio(
                   aspectRatio: 1,
                   child: Image.network(
-                    'https://images.unsplash.com/photo-1712313171623-5df9435ec12b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+                    image,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -75,7 +96,7 @@ class FavoritesScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Title',
+                    title,
                     style: TextStyle(
                       overflow: TextOverflow.ellipsis,
                       color: Get.isDarkMode ? Colors.white : Colors.black,
@@ -85,7 +106,7 @@ class FavoritesScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 10.0),
                   Text(
-                    '\$ 100',
+                    '\$ $price',
                     style: TextStyle(
                       overflow: TextOverflow.ellipsis,
                       color: Get.isDarkMode ? Colors.white : Colors.black,
@@ -98,7 +119,9 @@ class FavoritesScreen extends StatelessWidget {
             ),
             const Spacer(),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                controller.manageFavorite(productId);
+              },
               icon: const Icon(
                 Icons.favorite,
                 color: Colors.red,
