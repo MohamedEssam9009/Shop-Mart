@@ -1,8 +1,9 @@
-import '../../utils/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../logic/controllers/main_controller.dart';
+import '../../routes/routes.dart';
+import '../../utils/theme.dart';
 
 class MainScreen extends StatelessWidget {
   MainScreen({super.key});
@@ -21,7 +22,9 @@ class MainScreen extends StatelessWidget {
               leading: Container(),
               actions: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed(Routes.categoryScreen);
+                  },
                   icon: Image.asset('assets/images/shop.png'),
                 ),
               ],
