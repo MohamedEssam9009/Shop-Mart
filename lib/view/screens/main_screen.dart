@@ -23,7 +23,7 @@ class MainScreen extends StatelessWidget {
               actions: [
                 IconButton(
                   onPressed: () {
-                    Get.toNamed(Routes.categoryScreen);
+                    Get.toNamed(Routes.cartScreen);
                   },
                   icon: Image.asset('assets/images/shop.png'),
                 ),

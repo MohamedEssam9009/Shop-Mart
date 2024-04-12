@@ -1,13 +1,12 @@
+import 'package:get/get.dart';
 
 import '../logic/binding/auth_binding.dart';
 import '../logic/binding/main_binding.dart';
 import '../logic/binding/product_binding.dart';
+import '../view/screens/auth/forgot_password_screen.dart';
 import '../view/screens/auth/login_screen.dart';
 import '../view/screens/auth/signup_screen.dart';
-import 'package:get/get.dart';
-
-import '../view/screens/auth/forgot_password_screen.dart';
-import '../view/screens/category_screen.dart';
+import '../view/screens/cart_screen.dart';
 import '../view/screens/main_screen.dart';
 import '../view/screens/welcome_screen.dart';
 
@@ -47,8 +46,8 @@ class AppRoutes {
       ],
     ),
     GetPage(
-      name: Routes.categoryScreen,
-      page: () => const CategoryScreen(),
+      name: Routes.cartScreen,
+      page: () => const CartScreen(),
     )
   ];
 }
@@ -59,5 +58,5 @@ class Routes {
   static const signUpScreen = '/signUpScreen';
   static const forgotPasswordScreen = '/forgotPasswordScreen';
   static const mainScreen = '/mainScreen';
-  static const categoryScreen = '/categoryScreen';
+  static const cartScreen = '/cartScreen';
 }
