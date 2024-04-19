@@ -1,5 +1,9 @@
 import 'package:asroo_shop/models/product_models.dart';
+import 'package:asroo_shop/routes/routes.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../utils/theme.dart';
 
 class CartController extends GetxController {
   var productMap = {}.obs;
@@ -26,7 +30,34 @@ class CartController extends GetxController {
   }
 
   void clearAllProducts() {
-    productMap.clear();
+    Get.defaultDialog(
+      title: 'Clean Products',
+      titleStyle: const TextStyle(
+        fontSize: 18.0,
+        color: Colors.black,
+        fontWeight: FontWeight.bold,
+      ),
+      middleText: 'Are you sure you need clear products',
+      middleTextStyle: const TextStyle(
+        fontSize: 18.0,
+        color: Colors.black,
+        fontWeight: FontWeight.bold,
+      ),
+      backgroundColor: Colors.grey,
+      radius: 10.0,
+      textCancel: 'No',
+      cancelTextColor: Colors.white,
+      textConfirm: 'Yes',
+      confirmTextColor: Colors.white,
+      onCancel: () {
+        Get.toNamed(Routes.cartScreen);
+      },
+      onConfirm: () {
+        productMap.clear();
+        Get.back();
+      },
+      buttonColor: Get.isDarkMode ? pinkClr : mainColor,
+    );
   }
 
   get productSubTotal =>

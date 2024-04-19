@@ -1,3 +1,5 @@
+import 'package:asroo_shop/logic/controllers/cart_controller.dart';
+import 'package:asroo_shop/view/widgets/cart/empty_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -6,7 +8,9 @@ import '../widgets/cart/cart_product_card.dart';
 import '../widgets/cart/cart_total.dart';
 
 class CartScreen extends StatelessWidget {
-  const CartScreen({super.key});
+  CartScreen({super.key});
+
+  final controller = Get.find<CartController>();
 
   @override
   Widget build(BuildContext context) {
@@ -20,31 +24,47 @@ class CartScreen extends StatelessWidget {
           backgroundColor: Get.isDarkMode ? darkGreyClr : mainColor,
           actions: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                controller.clearAllProducts();
+              },
               icon: const Icon(Icons.backspace),
             )
           ],
         ),
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(
-                height: 600.0,
-                child: ListView.separated(
-                  itemBuilder: (context, index) {
-                    return const CartProductCard();
-                  },
-                  separatorBuilder: (context, index) =>
-                      const SizedBox(height: 20.0),
-                  itemCount: 1,
+        body: Obx(
+          () {
+            if (controller.productMap.isEmpty) {
+              return const EmptyCard();
+            } else {
+              return SingleChildScrollView(
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 600.0,
+                      child: ListView.separated(
+                        itemBuilder: (context, index) {
+                          return CartProductCard(
+                            index: index,
+                            productModels:
+                                controller.productMap.keys.toList()[index],
+                            quantity:
+                                controller.productMap.values.toList()[index],
+                          );
+                        },
+                        separatorBuilder: (context, index) =>
+                            const SizedBox(height: 20.0),
+                        itemCount: controller.productMap.length,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 30.0),
+                      child: CartTotal(),
+                    ),
+                  ],
                 ),
-              ),
-              const Padding(
-                padding: EdgeInsets.only(bottom: 30.0),
-                child: CartTotal(),
-              ),
-            ],
-          ),
+              );
+            }
+          },
         ),
       ),
     );

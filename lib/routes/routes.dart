@@ -47,7 +47,7 @@ class AppRoutes {
     ),
     GetPage(
       name: Routes.cartScreen,
-      page: () => const CartScreen(),
+      page: () => CartScreen(),
       bindings: [
         AuthBinding(),
         ProductBinding(),
