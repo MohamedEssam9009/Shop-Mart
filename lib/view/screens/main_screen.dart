@@ -1,3 +1,5 @@
+import 'package:asroo_shop/logic/controllers/cart_controller.dart';
+import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,6 +11,7 @@ class MainScreen extends StatelessWidget {
   MainScreen({super.key});
 
   final controller = Get.put(MainController());
+  final cartController = Get.put(CartController());
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +24,18 @@ class MainScreen extends StatelessWidget {
               elevation: 0.0,
               leading: Container(),
               actions: [
-                IconButton(
-                  onPressed: () {
-                    Get.toNamed(Routes.cartScreen);
-                  },
-                  icon: Image.asset('assets/images/shop.png'),
+                Obx(
+                  () => badges.Badge(
+                      position: badges.BadgePosition.topEnd(top: 0, end: 3),
+                      badgeAnimation: const badges.BadgeAnimation.slide(),
+                      badgeContent: Text(cartController.quantity().toString()),
+                      child: IconButton(
+                        onPressed: () {
+                          Get.toNamed(Routes.cartScreen);
+                        },
+                        icon: Image.asset('assets/images/shop.png'),
+                      ),
+                    ),
                 ),
               ],
               backgroundColor: Get.isDarkMode ? darkGreyClr : mainColor,
