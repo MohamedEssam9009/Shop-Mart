@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 import '../../utils/theme.dart';
 import '../widgets/cart/cart_product_card.dart';
+import '../widgets/cart/cart_total.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
@@ -37,6 +38,10 @@ class CartScreen extends StatelessWidget {
                       const SizedBox(height: 20.0),
                   itemCount: 1,
                 ),
+              ),
+              const Padding(
+                padding: EdgeInsets.only(bottom: 30.0),
+                child: CartTotal(),
               ),
             ],
           ),

@@ -1,4 +1,4 @@
-import 'package:asroo_shop/utils/theme.dart';
+import '../../../utils/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

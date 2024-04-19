@@ -1,9 +1,9 @@
-import '../../../routes/routes.dart';
-import '../../../utils/my_string.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../logic/controllers/auth_controller.dart';
+import '../../../routes/routes.dart';
+import '../../../utils/my_string.dart';
 import '../../../utils/theme.dart';
 import '../../widgets/auth/auth_button.dart';
 import '../../widgets/auth/auth_text_form_field.dart';

@@ -1,4 +1,4 @@
-import 'package:asroo_shop/view/screens/category_screen.dart';
+import '../../view/screens/category_screen.dart';
 import 'package:get/get.dart';
 
 import '../../view/screens/favorites_screen.dart';

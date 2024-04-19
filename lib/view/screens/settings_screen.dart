@@ -1,8 +1,9 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 import '../../logic/controllers/auth_controller.dart';
 import '../../logic/controllers/theme_controller.dart';
 import '../../utils/theme.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
