@@ -1,4 +1,4 @@
-import 'package:asroo_shop/logic/controllers/cart_controller.dart';
+import '../../logic/controllers/cart_controller.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
