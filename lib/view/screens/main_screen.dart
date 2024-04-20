@@ -26,16 +26,19 @@ class MainScreen extends StatelessWidget {
               actions: [
                 Obx(
                   () => badges.Badge(
-                      position: badges.BadgePosition.topEnd(top: 0, end: 3),
-                      badgeAnimation: const badges.BadgeAnimation.slide(),
-                      badgeContent: Text(cartController.quantity().toString()),
-                      child: IconButton(
-                        onPressed: () {
-                          Get.toNamed(Routes.cartScreen);
-                        },
-                        icon: Image.asset('assets/images/shop.png'),
-                      ),
+                    position: badges.BadgePosition.topEnd(top: 0, end: 3),
+                    badgeAnimation: const badges.BadgeAnimation.slide(),
+                    badgeContent: Text(
+                      cartController.quantity().toString(),
+                      style: const TextStyle(color: Colors.white),
                     ),
+                    child: IconButton(
+                      onPressed: () {
+                        Get.toNamed(Routes.cartScreen);
+                      },
+                      icon: Image.asset('assets/images/shop.png'),
+                    ),
+                  ),
                 ),
               ],
               backgroundColor: Get.isDarkMode ? darkGreyClr : mainColor,

@@ -1,9 +1,13 @@
+import 'package:asroo_shop/routes/routes.dart';
 import 'package:asroo_shop/utils/theme.dart';
 import 'package:asroo_shop/view/widgets/product_details/color_picker.dart';
+import 'package:badges/badges.dart' as badges;
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
+import '../../../logic/controllers/cart_controller.dart';
 
 class ImageSliders extends StatefulWidget {
   final String imageUrl;
@@ -15,6 +19,7 @@ class ImageSliders extends StatefulWidget {
 
 class _ImageSlidersState extends State<ImageSliders> {
   CarouselController carouselController = CarouselController();
+  final cartController = Get.put(CartController());
 
   int currentIndex = 0;
   int currentColor = 0;
@@ -103,6 +108,68 @@ class _ImageSlidersState extends State<ImageSliders> {
             ),
           ),
         ),
+        Container(
+          padding: const EdgeInsets.only(top: 20.0, left: 25.0, right: 25.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              InkWell(
+                onTap: () {
+                  Get.back();
+                },
+                child: Container(
+                  padding: const EdgeInsets.all(8.0),
+                  decoration: BoxDecoration(
+                    color: Get.isDarkMode
+                        ? pinkClr.withOpacity(0.8)
+                        : mainColor.withOpacity(0.8),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 10.0),
+                    child: Icon(
+                      Icons.arrow_back_ios,
+                      color: Get.isDarkMode ? Colors.black : Colors.white,
+                      size: 20.0,
+                    ),
+                  ),
+                ),
+              ),
+              Obx(
+                () {
+                  return badges.Badge(
+                    position: badges.BadgePosition.topEnd(top: -10, end: -10),
+                    badgeAnimation: const badges.BadgeAnimation.slide(),
+                    
+                    badgeContent: Text(
+                      cartController.quantity().toString(),
+                      style: const TextStyle(color: Colors.white),
+                    ),
+                    child: InkWell(
+                      onTap: () {
+                        Get.toNamed(Routes.cartScreen);
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(8.0),
+                        decoration: BoxDecoration(
+                          color: Get.isDarkMode
+                              ? pinkClr.withOpacity(0.8)
+                              : mainColor.withOpacity(0.8),
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(
+                          Icons.shopping_cart,
+                          color: Get.isDarkMode ? Colors.black : Colors.white,
+                          size: 20.0,
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ],
+          ),
+        )
       ],
     );
   }
