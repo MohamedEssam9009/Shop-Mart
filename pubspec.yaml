@@ -10,6 +10,7 @@ environment:
 
 dependencies:
   badges: ^3.1.2
+  carousel_slider: ^4.2.1
   cupertino_icons: ^1.0.6
   firebase_auth: ^4.19.0
   firebase_core: ^2.28.0
@@ -20,6 +21,7 @@ dependencies:
   google_fonts: ^6.2.1
   google_sign_in: ^6.2.1
   http: ^1.2.1
+  smooth_page_indicator: ^1.1.0
 
 dev_dependencies:
   flutter_lints: ^3.0.0
