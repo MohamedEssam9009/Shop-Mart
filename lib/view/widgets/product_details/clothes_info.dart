@@ -1,19 +1,23 @@
 import 'package:asroo_shop/logic/controllers/product_controller.dart';
+import 'package:asroo_shop/utils/theme.dart';
 import 'package:asroo_shop/view/widgets/text_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
+import 'package:readmore/readmore.dart';
 
 class ClothesInfo extends StatelessWidget {
   final String title;
   final int productId;
   final double rate;
+  final String description;
 
   ClothesInfo({
     super.key,
     required this.title,
     required this.productId,
     required this.rate,
+    required this.description,
   });
 
   final controller = Get.find<ProductController>();
@@ -91,6 +95,28 @@ class ClothesInfo extends StatelessWidget {
                 itemCount: 5,
               ),
             ],
+          ),
+          const SizedBox(height: 20.0),
+          ReadMoreText(
+            description,
+            trimLines: 3,
+            textAlign: TextAlign.justify,
+            trimCollapsedText: 'Show More',
+            trimExpandedText: 'Show Less',
+            lessStyle: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Get.isDarkMode ? pinkClr : mainColor,
+            ),
+            moreStyle: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Get.isDarkMode ? pinkClr : mainColor,
+            ),
+            style: TextStyle(
+              fontSize: 16.0,
+              fontWeight: FontWeight.bold,
+              height: 2.0,
+              color: Get.isDarkMode ? Colors.white : Colors.black,
+            ),
           ),
         ],
       ),
