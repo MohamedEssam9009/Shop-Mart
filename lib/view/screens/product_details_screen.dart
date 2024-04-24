@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 import '../widgets/product_details/clothes_info.dart';
 import '../widgets/product_details/image_sliders.dart';
+import '../widgets/product_details/size_list.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
   final ProductModels productModels;
@@ -26,7 +27,7 @@ class ProductDetailsScreen extends StatelessWidget {
                 rate: productModels.rating.rate,
                 description: productModels.description,
               ),
-              // SizeList(),
+               SizeList(),
               // AddCart(),
             ],
           ),
