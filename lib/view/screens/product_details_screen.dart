@@ -2,6 +2,7 @@ import 'package:asroo_shop/models/product_models.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../widgets/product_details/add_cart.dart';
 import '../widgets/product_details/clothes_info.dart';
 import '../widgets/product_details/image_sliders.dart';
 import '../widgets/product_details/size_list.dart';
@@ -27,8 +28,11 @@ class ProductDetailsScreen extends StatelessWidget {
                 rate: productModels.rating.rate,
                 description: productModels.description,
               ),
-               SizeList(),
-              // AddCart(),
+              const SizeList(),
+              AddCart(
+                price: productModels.price,
+                productModels: productModels,
+              ),
             ],
           ),
         ),
