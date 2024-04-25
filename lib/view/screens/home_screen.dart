@@ -26,27 +26,27 @@ class HomeScreen extends StatelessWidget {
                   bottomRight: Radius.circular(20.0),
                 ),
               ),
-              child: const Padding(
-                padding: EdgeInsets.only(left: 20.0, right: 20.0),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    TextUtils(
+                    const TextUtils(
                       text: 'Find Your',
                       color: Colors.white,
                       fontSize: 25.0,
                       fontWeight: FontWeight.bold,
                       underline: TextDecoration.none,
                     ),
-                    SizedBox(height: 5.0),
-                    TextUtils(
+                    const SizedBox(height: 5.0),
+                    const TextUtils(
                       text: 'Inspiration',
                       color: Colors.white,
                       fontSize: 28.0,
                       fontWeight: FontWeight.bold,
                       underline: TextDecoration.none,
                     ),
-                    SizedBox(height: 20.0),
+                    const SizedBox(height: 20.0),
                     SearchTextForm(),
                   ],
                 ),

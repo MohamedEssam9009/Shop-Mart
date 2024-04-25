@@ -25,31 +25,55 @@ class CardItems extends StatelessWidget {
         );
       } else {
         return Expanded(
-          child: GridView.builder(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              childAspectRatio: 0.8,
-              mainAxisSpacing: 9.0,
-              crossAxisSpacing: 6.0,
-            ),
-            itemBuilder: (context, index) {
-              return buildCardItems(
-                image: controller.productList[index].image,
-                price: controller.productList[index].price,
-                rate: controller.productList[index].rating.rate,
-                productId: controller.productList[index].id,
-                productModels: controller.productList[index],
-                onTap: () {
-                  Get.to(
-                    () => ProductDetailsScreen(
-                      productModels: controller.productList[index],
-                    ),
-                  );
-                },
-              );
-            },
-            itemCount: controller.productList.length,
-          ),
+          child: controller.searchList.isEmpty &&
+                  controller.searchTextController.text.isNotEmpty
+              ? Get.isDarkMode
+                  ? Image.asset('assets/images/search_empty_dark.png')
+                  : Image.asset('assets/images/search_empty_light.png')
+              : GridView.builder(
+                  itemCount: controller.searchList.isEmpty
+                      ? controller.productList.length
+                      : controller.searchList.length,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: 0.8,
+                    mainAxisSpacing: 9.0,
+                    crossAxisSpacing: 6.0,
+                  ),
+                  itemBuilder: (context, index) {
+                    if (controller.searchList.isEmpty) {
+                      return buildCardItems(
+                        image: controller.productList[index].image,
+                        price: controller.productList[index].price,
+                        rate: controller.productList[index].rating.rate,
+                        productId: controller.productList[index].id,
+                        productModels: controller.productList[index],
+                        onTap: () {
+                          Get.to(
+                            () => ProductDetailsScreen(
+                              productModels: controller.productList[index],
+                            ),
+                          );
+                        },
+                      );
+                    } else {
+                      return buildCardItems(
+                        image: controller.searchList[index].image,
+                        price: controller.searchList[index].price,
+                        rate: controller.searchList[index].rating.rate,
+                        productId: controller.searchList[index].id,
+                        productModels: controller.searchList[index],
+                        onTap: () {
+                          Get.to(
+                            () => ProductDetailsScreen(
+                              productModels: controller.searchList[index],
+                            ),
+                          );
+                        },
+                      );
+                    }
+                  },
+                ),
         );
       }
     });
