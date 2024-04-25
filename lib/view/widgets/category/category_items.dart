@@ -1,3 +1,4 @@
+import 'package:asroo_shop/logic/controllers/category_controller.dart';
 import 'package:asroo_shop/view/screens/product_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -9,23 +10,26 @@ import '../../../utils/theme.dart';
 import '../text_utils.dart';
 
 class CategoryItems extends StatelessWidget {
-  CategoryItems({super.key});
+  final String categoryTitle;
+
+  CategoryItems({super.key, required this.categoryTitle});
 
   final controller = Get.find<ProductController>();
   final cartController = Get.find<CartController>();
+  final categoryController = Get.find<CategoryController>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: context.theme.scaffoldBackgroundColor,
       appBar: AppBar(
-        title: const Text('Category'),
+        title: Text(categoryTitle),
         centerTitle: true,
         backgroundColor: Get.isDarkMode ? darkGreyClr : mainColor,
       ),
       body: Obx(
         () {
-          if (controller.isLoading.value) {
+          if (categoryController.isAllCategory.value) {
             return Center(
               child: CircularProgressIndicator(
                 color: Get.isDarkMode ? pinkClr : mainColor,
@@ -34,7 +38,7 @@ class CategoryItems extends StatelessWidget {
           } else {
             return Expanded(
               child: GridView.builder(
-                itemCount: controller.productList.length,
+                itemCount: categoryController.categoryList.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   childAspectRatio: 0.8,
@@ -43,15 +47,15 @@ class CategoryItems extends StatelessWidget {
                 ),
                 itemBuilder: (context, index) {
                   return buildCardItems(
-                    image: controller.productList[index].image,
-                    price: controller.productList[index].price,
-                    rate: controller.productList[index].rating.rate,
-                    productId: controller.productList[index].id,
-                    productModels: controller.productList[index],
+                    image: categoryController.categoryList[index].image,
+                    price: categoryController.categoryList[index].price,
+                    rate: categoryController.categoryList[index].rating.rate,
+                    productId: categoryController.categoryList[index].id,
+                    productModels: categoryController.categoryList[index],
                     onTap: () {
                       Get.to(
                         () => ProductDetailsScreen(
-                          productModels: controller.productList[index],
+                          productModels: categoryController.categoryList[index],
                         ),
                       );
                     },
