@@ -1,8 +1,9 @@
-import '../../../logic/controllers/cart_controller.dart';
-import '../../../utils/theme.dart';
+import 'package:asroo_shop/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../logic/controllers/cart_controller.dart';
+import '../../../utils/theme.dart';
 import '../text_utils.dart';
 
 class CartTotal extends StatelessWidget {
@@ -44,7 +45,9 @@ class CartTotal extends StatelessWidget {
                 child: SizedBox(
                   height: 60.0,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.toNamed(Routes.paymentScreen);
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Get.isDarkMode ? pinkClr : mainColor,
                       shape: RoundedRectangleBorder(

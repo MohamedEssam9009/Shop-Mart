@@ -1,3 +1,4 @@
+import 'package:asroo_shop/view/screens/payment_screen.dart';
 import 'package:get/get.dart';
 
 import '../logic/binding/auth_binding.dart';
@@ -53,6 +54,15 @@ class AppRoutes {
         ProductBinding(),
       ],
     ),
+    GetPage(
+      name: Routes.paymentScreen,
+      page: () => PayMentScreen(),
+      bindings: [
+        AuthBinding(),
+        MainBinding(),
+        ProductBinding(),
+      ],
+    ),
   ];
 }
 
@@ -63,4 +73,5 @@ class Routes {
   static const forgotPasswordScreen = '/forgotPasswordScreen';
   static const mainScreen = '/mainScreen';
   static const cartScreen = '/cartScreen';
+  static const paymentScreen = '/paymentScreen';
 }
