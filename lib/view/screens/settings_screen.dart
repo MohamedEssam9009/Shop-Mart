@@ -26,7 +26,7 @@ class SettingsScreen extends StatelessWidget {
           ),
           const SizedBox(height: 20.0),
           TextUtils(
-            text: 'GENERAL',
+            text: 'GENERAL'.tr,
             color: Get.isDarkMode ? pinkClr : mainColor,
             fontSize: 18.0,
             fontWeight: FontWeight.bold,
