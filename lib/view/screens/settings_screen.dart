@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../widgets/settings/dark_mode_widget.dart';
+import '../widgets/settings/language_widget.dart';
 import '../widgets/settings/logout_widget.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -34,7 +35,7 @@ class SettingsScreen extends StatelessWidget {
           const SizedBox(height: 20.0),
           DarkModeWidget(),
           const SizedBox(height: 20.0),
-          //LanguageWidget(),
+          LanguageWidget(),
           const SizedBox(height: 20.0),
           LogOutWidget(),
         ],

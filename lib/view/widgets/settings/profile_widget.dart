@@ -31,25 +31,27 @@ class ProfileWidget extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 15.0),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  TextUtils(
-                    text: controller
-                        .capitalize(authController.displayUserName.value),
-                    color: Get.isDarkMode ? Colors.white : Colors.black,
-                    fontSize: 22.0,
-                    fontWeight: FontWeight.bold,
-                    underline: TextDecoration.none,
-                  ),
-                  TextUtils(
-                    text: authController.displayUserEmail.value,
-                    color: Get.isDarkMode ? Colors.white : Colors.black,
-                    fontSize: 14.0,
-                    fontWeight: FontWeight.bold,
-                    underline: TextDecoration.none,
-                  ),
-                ],
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    TextUtils(
+                      text: controller
+                          .capitalize(authController.displayUserName.value),
+                      color: Get.isDarkMode ? Colors.white : Colors.black,
+                      fontSize: 22.0,
+                      fontWeight: FontWeight.bold,
+                      underline: TextDecoration.none,
+                    ),
+                    TextUtils(
+                      text: authController.displayUserEmail.value,
+                      color: Get.isDarkMode ? Colors.white : Colors.black,
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.bold,
+                      underline: TextDecoration.none,
+                    ),
+                  ],
+                ),
               )
             ],
           ),

@@ -21,6 +21,7 @@ class TextUtils extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
+      overflow: TextOverflow.ellipsis,
       style: GoogleFonts.lato(
         textStyle: TextStyle(
           decoration: TextDecoration.none,
