@@ -1,10 +1,10 @@
-import 'package:asroo_shop/utils/theme.dart';
-import 'package:asroo_shop/view/widgets/text_utils.dart';
+import 'package:asroo_shop/logic/controllers/settings_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../logic/controllers/settings_controller.dart';
 import '../../../logic/controllers/theme_controller.dart';
+import '../../../utils/theme.dart';
+import '../text_utils.dart';
 
 class DarkModeWidget extends StatelessWidget {
   DarkModeWidget({super.key});
@@ -38,7 +38,7 @@ class DarkModeWidget extends StatelessWidget {
       child: Row(
         children: [
           Container(
-            padding: const EdgeInsets.all(6.0),
+            padding: const EdgeInsets.all(6),
             decoration: const BoxDecoration(
               shape: BoxShape.circle,
               color: darkSettings,
@@ -50,10 +50,10 @@ class DarkModeWidget extends StatelessWidget {
           ),
           const SizedBox(width: 20.0),
           TextUtils(
-            text: 'Dark mode',
-            color: Get.isDarkMode ? Colors.white : Colors.black,
             fontSize: 22.0,
             fontWeight: FontWeight.bold,
+            text: 'Dark Mode'.tr,
+            color: Get.isDarkMode ? Colors.white : Colors.black,
             underline: TextDecoration.none,
           ),
         ],
