@@ -1,4 +1,5 @@
 import 'package:asroo_shop/utils/theme.dart';
+import 'package:asroo_shop/view/widgets/settings/profile_widget.dart';
 import 'package:asroo_shop/view/widgets/text_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,7 +17,7 @@ class SettingsScreen extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(24),
         children: [
-          // ProfileImage(),
+          ProfileWidget(),
           const SizedBox(height: 10.0),
           Divider(
             color: Get.isDarkMode ? Colors.white : Colors.grey,
