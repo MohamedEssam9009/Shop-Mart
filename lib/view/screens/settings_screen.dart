@@ -3,6 +3,8 @@ import 'package:asroo_shop/view/widgets/text_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../widgets/settings/dark_mode_widget.dart';
+
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
 
@@ -11,6 +13,7 @@ class SettingsScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: context.theme.scaffoldBackgroundColor,
       body: ListView(
+        padding: const EdgeInsets.all(24),
         children: [
           // ProfileImage(),
           const SizedBox(height: 10.0),
@@ -27,11 +30,11 @@ class SettingsScreen extends StatelessWidget {
             underline: TextDecoration.none,
           ),
           const SizedBox(height: 20.0),
-          //DarkModeWidget(),
+           DarkModeWidget(),
           const SizedBox(height: 20.0),
           //LanguageWidget(),
           const SizedBox(height: 20.0),
-         // LogOutWidget(),
+          // LogOutWidget(),
         ],
       ),
       // body: Center(
