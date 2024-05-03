@@ -59,7 +59,7 @@ class WelcomeScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         TextUtils(
-                          text: 'Asroo',
+                          text: 'Shop',
                           color: mainColor,
                           fontSize: 35.0,
                           fontWeight: FontWeight.bold,
@@ -67,7 +67,7 @@ class WelcomeScreen extends StatelessWidget {
                         ),
                         SizedBox(width: 7.0),
                         TextUtils(
-                          text: 'Shop',
+                          text: 'Mart',
                           color: Colors.white,
                           fontSize: 35.0,
                           fontWeight: FontWeight.bold,

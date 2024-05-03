@@ -1,4 +1,4 @@
-name: asroo_shop
+name: shop_mart
 description: "A new Flutter project."
 
 publish_to: "none"
@@ -28,24 +28,15 @@ dependencies:
   smooth_page_indicator: ^1.1.0
 
 dev_dependencies:
+  change_app_package_name: ^1.1.0
   flutter_lints: ^3.0.0
   flutter_test:
     sdk: flutter
+  rename_app: ^1.3.2
 
 flutter:
   uses-material-design: true
 
   assets:
     - assets/images/
-  #   - images/a_dot_ham.jpeg
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
+
