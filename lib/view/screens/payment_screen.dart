@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 import '../../utils/theme.dart';
 import '../widgets/payment/delivery_container_widget.dart';
+import '../widgets/payment/payment_method_widget.dart';
 
 class PayMentScreen extends StatelessWidget {
   const PayMentScreen({super.key});
@@ -42,9 +43,41 @@ class PayMentScreen extends StatelessWidget {
                 underline: TextDecoration.none,
               ),
               const SizedBox(height: 20.0),
-              // Payment Method Widget
+              const PaymentMethodWidget(),
               const SizedBox(height: 30.0),
-              // Total button
+              Center(
+                child: TextUtils(
+                  text: 'Total: 200\$',
+                  color: Get.isDarkMode ? Colors.white : Colors.black,
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  underline: TextDecoration.none,
+                ),
+              ),
+              const SizedBox(height: 20.0),
+              Center(
+                child: SizedBox(
+                  height: 50.0,
+                  width: 150.0,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      elevation: 0.0,
+                      backgroundColor: Get.isDarkMode ? pinkClr : mainColor,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                    onPressed: () {},
+                    child: const Text(
+                      'Pay Now',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 22.0,
+                      ),
+                    ),
+                  ),
+                ),
+              )
             ],
           ),
         ),

@@ -18,10 +18,10 @@ class _DeliveryContainerWidgetState extends State<DeliveryContainerWidget> {
     return Column(
       children: [
         buildRadioContainer(
-          address: 'Sohag , ',
-          name: 'asroo store',
+          address: 'Egypt , Khatem Elmorsaleen - Elharam',
+          name: 'CFC building',
           phone: '+201019664820',
-          title: 'asroo shop',
+          title: 'Work',
           value: 1,
           color: changeColor ? Colors.white : Colors.grey.shade300,
           onChanged: (int? value) {
@@ -33,10 +33,10 @@ class _DeliveryContainerWidgetState extends State<DeliveryContainerWidget> {
         ),
         const SizedBox(height: 10.0),
         buildRadioContainer(
-          address: 'Sohag , ',
-          name: 'mohamed essam',
-          phone: '+201019664820',
-          title: 'asroo shop',
+          address: 'Egypt , Khatem Elmorsaleen - Elharam',
+          name: 'Giza',
+          phone: '+201021132037',
+          title: 'Home',
           value: 2,
           color: changeColor ? Colors.grey.shade300 : Colors.white,
           onChanged: (int? value) {
