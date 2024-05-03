@@ -81,12 +81,12 @@ class SignUpScreen extends StatelessWidget {
                             }
                           },
                           prefixIcon: Get.isDarkMode
-                              ? Image.asset('assets/images/user.png')
-                              : const Icon(
+                              ? const Icon(
                                   Icons.person,
                                   color: pinkClr,
                                   size: 30.0,
-                                ),
+                                )
+                              : Image.asset('assets/images/user.png'),
                           suffixIcon: const Text(''),
                           hintText: 'User Name',
                         ),
@@ -102,12 +102,12 @@ class SignUpScreen extends StatelessWidget {
                             }
                           },
                           prefixIcon: Get.isDarkMode
-                              ? Image.asset('assets/images/email.png')
-                              : const Icon(
+                              ? const Icon(
                                   Icons.email,
                                   color: pinkClr,
                                   size: 30.0,
-                                ),
+                                )
+                              : Image.asset('assets/images/email.png'),
                           suffixIcon: const Text(''),
                           hintText: 'Email',
                         ),
@@ -126,12 +126,12 @@ class SignUpScreen extends StatelessWidget {
                                 }
                               },
                               prefixIcon: Get.isDarkMode
-                                  ? Image.asset('assets/images/lock.png')
-                                  : const Icon(
+                                  ? const Icon(
                                       Icons.lock,
                                       color: pinkClr,
                                       size: 30.0,
-                                    ),
+                                    )
+                                  : Image.asset('assets/images/lock.png'),
                               suffixIcon: IconButton(
                                 onPressed: () {
                                   controller.visibility();

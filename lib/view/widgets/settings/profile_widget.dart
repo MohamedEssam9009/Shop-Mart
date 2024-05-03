@@ -24,10 +24,11 @@ class ProfileWidget extends StatelessWidget {
                   color: Colors.white,
                   shape: BoxShape.circle,
                   image: DecorationImage(
-                      image: NetworkImage(
-                        authController.displayUserEmail.value,
-                      ),
-                      fit: BoxFit.cover),
+                    image: NetworkImage(
+                      authController.displayUserName.value,
+                    ),
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
               const SizedBox(width: 15.0),

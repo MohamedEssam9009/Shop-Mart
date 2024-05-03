@@ -29,11 +29,11 @@ class CheckWidget extends StatelessWidget {
                 ),
                 child: controller.isCheckedBox
                     ? Get.isDarkMode
-                        ? Image.asset('assets/images/check.png')
-                        : const Icon(
+                        ? const Icon(
                             Icons.done,
                             color: pinkClr,
                           )
+                        : Image.asset('assets/images/check.png')
                     : Container(),
               ),
             ),
