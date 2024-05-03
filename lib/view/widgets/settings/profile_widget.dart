@@ -1,6 +1,6 @@
-import 'package:asroo_shop/logic/controllers/auth_controller.dart';
-import 'package:asroo_shop/logic/controllers/settings_controller.dart';
-import 'package:asroo_shop/view/widgets/text_utils.dart';
+import '../../../logic/controllers/auth_controller.dart';
+import '../../../logic/controllers/settings_controller.dart';
+import '../text_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

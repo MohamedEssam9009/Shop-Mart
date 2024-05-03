@@ -1,4 +1,4 @@
-import 'package:asroo_shop/utils/my_string.dart';
+import '../../utils/my_string.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 

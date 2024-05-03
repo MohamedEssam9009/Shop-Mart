@@ -1,5 +1,5 @@
-import 'package:asroo_shop/models/product_models.dart';
-import 'package:asroo_shop/services/category_services.dart';
+import '../../models/product_models.dart';
+import '../../services/category_services.dart';
 import 'package:get/get.dart';
 
 class CategoryController extends GetxController {

@@ -1,5 +1,5 @@
-import 'package:asroo_shop/logic/controllers/category_controller.dart';
-import 'package:asroo_shop/view/screens/product_details_screen.dart';
+import '../../../logic/controllers/category_controller.dart';
+import '../../screens/product_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

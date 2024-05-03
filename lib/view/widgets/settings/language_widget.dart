@@ -1,6 +1,6 @@
-import 'package:asroo_shop/logic/controllers/settings_controller.dart';
-import 'package:asroo_shop/utils/my_string.dart';
-import 'package:asroo_shop/utils/theme.dart';
+import '../../../logic/controllers/settings_controller.dart';
+import '../../../utils/my_string.dart';
+import '../../../utils/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

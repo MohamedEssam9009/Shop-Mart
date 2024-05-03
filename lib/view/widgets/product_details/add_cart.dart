@@ -1,7 +1,7 @@
-import 'package:asroo_shop/logic/controllers/cart_controller.dart';
-import 'package:asroo_shop/models/product_models.dart';
-import 'package:asroo_shop/utils/theme.dart';
-import 'package:asroo_shop/view/widgets/text_utils.dart';
+import '../../../logic/controllers/cart_controller.dart';
+import '../../../models/product_models.dart';
+import '../../../utils/theme.dart';
+import '../text_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

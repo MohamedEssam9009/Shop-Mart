@@ -1,8 +1,8 @@
-import 'package:asroo_shop/logic/controllers/auth_controller.dart';
-import 'package:asroo_shop/logic/controllers/payment_controller.dart';
-import 'package:asroo_shop/routes/routes.dart';
-import 'package:asroo_shop/utils/theme.dart';
-import 'package:asroo_shop/view/widgets/text_utils.dart';
+import '../../../logic/controllers/auth_controller.dart';
+import '../../../logic/controllers/payment_controller.dart';
+import '../../../routes/routes.dart';
+import '../../../utils/theme.dart';
+import '../text_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

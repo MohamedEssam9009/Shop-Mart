@@ -1,5 +1,5 @@
-import 'package:asroo_shop/utils/theme.dart';
-import 'package:asroo_shop/view/widgets/text_utils.dart';
+import '../../../utils/theme.dart';
+import '../text_utils.dart';
 import 'package:flutter/material.dart';
 
 class PaymentMethodWidget extends StatefulWidget {

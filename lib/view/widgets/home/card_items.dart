@@ -1,4 +1,4 @@
-import 'package:asroo_shop/view/screens/product_details_screen.dart';
+import '../../screens/product_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

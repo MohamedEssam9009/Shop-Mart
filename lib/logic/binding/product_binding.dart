@@ -1,4 +1,4 @@
-import 'package:asroo_shop/logic/controllers/category_controller.dart';
+import '../controllers/category_controller.dart';
 
 import '../controllers/cart_controller.dart';
 import 'package:get/get.dart';

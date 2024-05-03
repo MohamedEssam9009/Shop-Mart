@@ -1,4 +1,4 @@
-import 'package:asroo_shop/logic/controllers/settings_controller.dart';
+import '../../../logic/controllers/settings_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

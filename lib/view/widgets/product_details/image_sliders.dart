@@ -1,6 +1,6 @@
-import 'package:asroo_shop/routes/routes.dart';
-import 'package:asroo_shop/utils/theme.dart';
-import 'package:asroo_shop/view/widgets/product_details/color_picker.dart';
+import '../../../routes/routes.dart';
+import '../../../utils/theme.dart';
+import 'color_picker.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';

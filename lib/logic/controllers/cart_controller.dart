@@ -1,8 +1,8 @@
-import '../../models/product_models.dart';
-import '../../routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../models/product_models.dart';
+import '../../routes/routes.dart';
 import '../../utils/theme.dart';
 
 class CartController extends GetxController {

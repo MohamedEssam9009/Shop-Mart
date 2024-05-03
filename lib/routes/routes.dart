@@ -1,4 +1,4 @@
-import 'package:asroo_shop/view/screens/payment_screen.dart';
+import '../view/screens/payment_screen.dart';
 import 'package:get/get.dart';
 
 import '../logic/binding/auth_binding.dart';
