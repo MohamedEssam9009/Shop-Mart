@@ -1,5 +1,9 @@
+import 'package:asroo_shop/logic/controllers/payment_controller.dart';
+import 'package:asroo_shop/routes/routes.dart';
+import 'package:asroo_shop/utils/theme.dart';
 import 'package:asroo_shop/view/widgets/text_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class DeliveryContainerWidget extends StatefulWidget {
   const DeliveryContainerWidget({super.key});
@@ -10,8 +14,11 @@ class DeliveryContainerWidget extends StatefulWidget {
 }
 
 class _DeliveryContainerWidgetState extends State<DeliveryContainerWidget> {
+  final TextEditingController phoneController = TextEditingController();
   int radioContainerIndex = 1;
   bool changeColor = false;
+
+  final controller = Get.find<PaymentController>();
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +27,11 @@ class _DeliveryContainerWidgetState extends State<DeliveryContainerWidget> {
         buildRadioContainer(
           address: 'Egypt , Khatem Elmorsaleen - Elharam',
           name: 'CFC building',
-          phone: '+201019664820',
+          phone: '01019664820',
           title: 'Work',
           value: 1,
           color: changeColor ? Colors.white : Colors.grey.shade300,
+          icon: Container(),
           onChanged: (int? value) {
             setState(() {
               radioContainerIndex = value!;
@@ -32,19 +40,105 @@ class _DeliveryContainerWidgetState extends State<DeliveryContainerWidget> {
           },
         ),
         const SizedBox(height: 10.0),
-        buildRadioContainer(
-          address: 'Egypt , Khatem Elmorsaleen - Elharam',
-          name: 'Giza',
-          phone: '+201021132037',
-          title: 'Home',
-          value: 2,
-          color: changeColor ? Colors.grey.shade300 : Colors.white,
-          onChanged: (int? value) {
-            setState(() {
-              radioContainerIndex = value!;
-              changeColor = !changeColor;
-            });
-          },
+        Obx(
+          () => buildRadioContainer(
+            address: 'Egypt , Khatem Elmorsaleen - Elharam',
+            name: 'Giza',
+            phone: controller.phoneNumber.value,
+            title: 'Home',
+            value: 2,
+            color: changeColor ? Colors.grey.shade300 : Colors.white,
+            icon: InkWell(
+              onTap: () {
+                Get.defaultDialog(
+                  title: 'Enter your Phone Number',
+                  titleStyle: const TextStyle(
+                    fontSize: 16.0,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  backgroundColor: Colors.white,
+                  radius: 10.0,
+                  textCancel: ' Cancel ',
+                  cancelTextColor: Colors.black,
+                  textConfirm: ' Save ',
+                  onCancel: () {
+                    Get.toNamed(Routes.paymentScreen);
+                  },
+                  onConfirm: () {
+                    Get.back();
+                    controller.phoneNumber.value = phoneController.text;
+                  },
+                  buttonColor: Get.isDarkMode ? pinkClr : mainColor,
+                  content: Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: TextField(
+                      controller: phoneController,
+                      cursorColor: Colors.black,
+                      keyboardType: TextInputType.text,
+                      maxLength: 11,
+                      onSubmitted: (value) {
+                        phoneController.text = value;
+                      },
+                      decoration: InputDecoration(
+                        fillColor: Get.isDarkMode
+                            ? pinkClr.withOpacity(0.1)
+                            : mainColor.withOpacity(0.2),
+                        focusColor: Colors.red,
+                        prefixIcon: Icon(
+                          Icons.phone,
+                          color: Get.isDarkMode ? pinkClr : mainColor,
+                        ),
+                        suffixIcon: IconButton(
+                          onPressed: () {
+                            phoneController.clear();
+                          },
+                          icon: const Icon(
+                            Icons.close,
+                            color: Colors.black,
+                          ),
+                        ),
+                        hintText: 'Enter Your Phone Number',
+                        hintStyle: const TextStyle(
+                          color: Colors.black45,
+                          fontSize: 12.0,
+                          fontWeight: FontWeight.w500,
+                        ),
+                        filled: true,
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(color: Colors.white),
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(color: Colors.white),
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        errorBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(color: Colors.white),
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        focusedErrorBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(color: Colors.white),
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                      ),
+                    ),
+                  ),
+                );
+              },
+              child: Icon(
+                Icons.contact_phone,
+                size: 20.0,
+                color: Get.isDarkMode ? pinkClr : mainColor,
+              ),
+            ),
+            onChanged: (int? value) {
+              setState(() {
+                radioContainerIndex = value!;
+                changeColor = !changeColor;
+              });
+            },
+          ),
         ),
       ],
     );
@@ -58,6 +152,7 @@ class _DeliveryContainerWidgetState extends State<DeliveryContainerWidget> {
     required String title,
     required String phone,
     required String address,
+    required Widget icon,
   }) {
     return Container(
       height: 120.0,
@@ -107,12 +202,21 @@ class _DeliveryContainerWidgetState extends State<DeliveryContainerWidget> {
                   underline: TextDecoration.none,
                 ),
                 const SizedBox(height: 5.0),
-                TextUtils(
-                  text: phone,
-                  color: Colors.black,
-                  fontSize: 15.0,
-                  fontWeight: FontWeight.normal,
-                  underline: TextDecoration.none,
+                Row(
+                  children: [
+                    const Text('🇪🇬'),
+                    TextUtils(
+                      text: phone,
+                      color: Colors.black,
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.normal,
+                      underline: TextDecoration.none,
+                    ),
+                    const SizedBox(width: 120.0),
+                    SizedBox(
+                      child: icon,
+                    )
+                  ],
                 ),
                 const SizedBox(height: 5.0),
                 TextUtils(
