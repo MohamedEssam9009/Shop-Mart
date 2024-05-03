@@ -23,6 +23,10 @@ class AuthController extends GetxController {
 
   User? get userProfile => auth.currentUser;
 
+   String capitalize(String profileName) {
+    return profileName.split(' ').map((name) => name.capitalize).join(' ');
+  }
+
   @override
   void onInit() {
     displayUserName.value =

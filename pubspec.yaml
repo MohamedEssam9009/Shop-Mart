@@ -17,6 +17,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_rating_bar: ^4.0.1
+  geocoding: ^3.0.0
+  geolocator: ^11.0.0
   get: ^4.6.6
   get_storage: ^2.1.1
   google_fonts: ^6.2.1

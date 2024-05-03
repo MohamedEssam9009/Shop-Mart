@@ -1,3 +1,4 @@
+import 'package:asroo_shop/logic/controllers/auth_controller.dart';
 import 'package:asroo_shop/logic/controllers/payment_controller.dart';
 import 'package:asroo_shop/routes/routes.dart';
 import 'package:asroo_shop/utils/theme.dart';
@@ -19,6 +20,7 @@ class _DeliveryContainerWidgetState extends State<DeliveryContainerWidget> {
   bool changeColor = false;
 
   final controller = Get.find<PaymentController>();
+  final authController = Get.find<AuthController>();
 
   @override
   Widget build(BuildContext context) {
@@ -42,8 +44,9 @@ class _DeliveryContainerWidgetState extends State<DeliveryContainerWidget> {
         const SizedBox(height: 10.0),
         Obx(
           () => buildRadioContainer(
-            address: 'Egypt , Khatem Elmorsaleen - Elharam',
-            name: 'Giza',
+            address: controller.address.value,
+            name:
+                authController.capitalize(authController.displayUserName.value),
             phone: controller.phoneNumber.value,
             title: 'Home',
             value: 2,
@@ -137,6 +140,7 @@ class _DeliveryContainerWidgetState extends State<DeliveryContainerWidget> {
                 radioContainerIndex = value!;
                 changeColor = !changeColor;
               });
+              controller.updatePosition();
             },
           ),
         ),
