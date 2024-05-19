@@ -1,17 +1,48 @@
 # Shop Mart
 
-This is a Flutter-based E-Commerce application that utilizes RESTful API for fetching and managing data. The state management in this project is handled using GetX, a powerful state management library for Flutter.
+Shop Mart is a Flutter-based mobile application for a shopping platform that allows users to browse products, add them to their favorites or cart, and purchase them using integrated payment methods. The app supports user authentication, social logins, product display via API, theme switching, and multilingual support.
 
 ## Features
 
-- Browse products
-- Search for products
-- View product details
-- Add products to the cart
-- Manage cart items
-- Checkout products
-- User authentication
-- Profile management
+1- User Authentication:
+
+Login and register using username and password.
+Login using Google and Facebook accounts.
+
+2- Product Display:
+Display products fetched from an API.
+
+3-Favorites and Cart:
+Add products to favorites.
+Add products to the cart.
+
+4-Purchase Products:
+Buy products using integrated payment methods.
+
+5-Theme Switching:
+Change themes between dark and light modes.
+
+6-Language Support:
+Change the app's language.
+
+## Packages Used
+- badges: 
+- carousel_slider: 
+- cupertino_icons: 
+- firebase_auth: 
+- firebase_core: 
+- flutter:
+    sdk: flutter
+- flutter_rating_bar: 
+- geocoding: 
+- geolocator: 
+- get: 
+- get_storage: 
+- google_fonts: 
+- google_sign_in: 
+- http: 
+- readmore: 
+- smooth_page_indicator: 
 
 ## Screens
 ![Full Presentation Shop Mart](https://github.com/MohamedEssam9009/Shop-Mart/assets/77198018/400976b5-c4fc-4782-8ae7-489b0b772a53)
@@ -37,39 +68,25 @@ To get started with this project, follow these steps:
    flutter run
    ``` 
 
-## Folder Structure
+##Firebase Setup
 
-The project follows a standard Flutter project structure. Here's an overview of the folders:
+1- Set up a Firebase project here.
+2- Add your Android and iOS app to the Firebase project.
+3- Download the google-services.json file for Android and GoogleService-Info.plist for iOS.
+4- Place the google-services.json file in the android/app directory.
+5- Place the GoogleService-Info.plist file in the ios/Runner directory.
+6- Follow the official Firebase setup guide for Flutter here.
 
-- **lib**: Contains all the Dart code for the application.
-- **constants**: Contains constants such as API URLs, keys, etc.
-- **models**: Contains Dart classes for data models used in the application.
-- **services**: Contains service classes for API communication, authentication, etc.
-- **controllers**: Contains GetX controllers for managing states and business logic.
-- **views**: Contains UI screens for different features of the app.
-- **widgets**: Contains reusable widgets used across the app.
-- **routes**: Contains route management configuration.
-- **utils**: Contains utility functions.
-- **main.dart**: Entry point of the application.
+## Project Structure
 
-## Dependencies
-
-The project uses the following dependencies:
-
-- **flutter**: The Flutter SDK.
-- **get**: State management library for Flutter.
-- **Dart**: 
-- **shared_preferences**: For storing simple data in the device.
-
+lib/: Contains the main source code of the app.
+main.dart: The entry point of the application.
+screens/: Contains the UI screens.
+models/: Contains the data models.
+services/: Contains the service classes for API calls, authentication, etc.
+controllers/: Contains the controller classes for managing state and business logic.
+widgets/: Contains reusable widgets.
 
 ## Contributing
 
 Contributions are welcome! If you want to contribute to this project, feel free to open a pull request.
-
-
-
-
-
-
-
-
