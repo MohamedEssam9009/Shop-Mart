@@ -8,7 +8,7 @@ Shop Mart is a Flutter-based mobile application for a shopping platform that all
 
 2- Product Display: Display products fetched from an API.
 
-3-Favorites and Cart:Add products to favorites. Add products to the cart.
+3-Favorites and Cart: Add products to favorites. Add products to the cart.
 
 4-Purchase Products: Buy products using integrated payment methods.
 
@@ -17,3 +17,5 @@ Shop Mart is a Flutter-based mobile application for a shopping platform that all
 6-Language Support: Change the app's language.
 
 ## Screens
+
+![Shop Mart Presentation](https://github.com/MohamedEssam9009/Shop-Mart/assets/77198018/2655506b-025a-4701-a7ad-cd978c4b0055)
