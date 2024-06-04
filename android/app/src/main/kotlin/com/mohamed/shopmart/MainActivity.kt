@@ -1,4 +1,4 @@
-package com.mohamed.essam.shop_mart
+package com.mohamed.shopmart
 
 import io.flutter.embedding.android.FlutterActivity
 

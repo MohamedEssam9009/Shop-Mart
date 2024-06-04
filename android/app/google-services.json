@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "430373408135",
-    "project_id": "asroo-shop-c2f71",
-    "storage_bucket": "asroo-shop-c2f71.appspot.com"
+    "project_number": "821146520382",
+    "project_id": "shop-mart-e6171",
+    "storage_bucket": "shop-mart-e6171.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:430373408135:android:4af4c48643498211d6d722",
+        "mobilesdk_app_id": "1:821146520382:android:5a02af22b8108451b67a6f",
         "android_client_info": {
-          "package_name": "com.example.asroo_shop"
+          "package_name": "com.mohamed.shopmart"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAMFyPf2cU842v_BpxOBup2Qny0eqCAyec"
+          "current_key": "AIzaSyCoLFsREy-G3QIYSNNyCDoZjoge5eu7hxs"
         }
       ],
       "services": {

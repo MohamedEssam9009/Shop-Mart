@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyBaBkZZpiNunBtGYS8Te6C9gzkKO9zm5dE</string>
+	<string>AIzaSyDAdT6RI4nw5WcBs8RnEP6WUv0FYSg3lQk</string>
 	<key>GCM_SENDER_ID</key>
-	<string>430373408135</string>
+	<string>821146520382</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.example.asrooShop</string>
 	<key>PROJECT_ID</key>
-	<string>asroo-shop-c2f71</string>
+	<string>shop-mart-e6171</string>
 	<key>STORAGE_BUCKET</key>
-	<string>asroo-shop-c2f71.appspot.com</string>
+	<string>shop-mart-e6171.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:430373408135:ios:f64590b3c83ed4aad6d722</string>
+	<string>1:821146520382:ios:19c48be72dfcac91b67a6f</string>
 </dict>
 </plist>

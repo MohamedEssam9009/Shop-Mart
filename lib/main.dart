@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
       locale: Locale(GetStorage().read<String>('lang').toString()),
       fallbackLocale: Locale(ene),
       translations: LocalizationApp(),
-      title: 'Asroo Shop',
+      title: 'Shop Mart',
       theme: ThemesApp.light,
       darkTheme: ThemesApp.dark,
       themeMode: ThemeController().getThemeDataGet,
