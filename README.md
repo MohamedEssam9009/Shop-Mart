@@ -17,11 +17,3 @@ Shop Mart is a Flutter-based mobile application for a shopping platform that all
 6-Language Support: Change the app's language.
 
 ## Screens
-
-![Full Presentation Shop Mart](https://github.com/MohamedEssam9009/Shop-Mart/assets/77198018/400976b5-c4fc-4782-8ae7-489b0b772a53)
-
-
-
-## Contributing
-
-Contributions are welcome! If you want to contribute to this project, feel free to open a pull request.
